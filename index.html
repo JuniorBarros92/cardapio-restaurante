@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sabor & Arte - Restaurante</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header -->
     <header id="header">
         <div class="container">
             <div class="logo">
@@ -39,7 +36,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content">
             <h2>Gastronomia de Excelência</h2>
@@ -48,30 +44,13 @@
         </div>
     </section>
 
-    <!-- Menu Section -->
     <section id="menu" class="section-padding">
         <div class="container">
             <h2 class="section-title">Nosso Cardápio</h2>
             <div class="menu-grid">
-                <!-- Card 1 -->
-                <div class="menu-card" data-id="1">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200?text=Risoto" alt="Risoto de Cogumelos">
-                    </div>
-                    <div class="card-content">
-                        <h3>Risoto de Cogumelos</h3>
-                        <p>Arroz arbóreo, mix de cogumelos frescos e parmesão.</p>
-                        <span class="price">R$ 58,00</span>
-                        <div class="card-actions">
-                            <button class="btn-details" onclick="openModal(1)">Detalhes</button>
-                            <button class="btn-add" onclick="addToCart(1)"><i class="fas fa-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
                 <div class="menu-card fade-in" data-id="2">
                     <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200?text=Salmao" alt="Salmão Grelhado">
+                        <img src="./img/01.jpg" alt="Salmão Grelhado">
                     </div>
                     <div class="card-content">
                         <h3>Salmão Grelhado</h3>
@@ -83,10 +62,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- Card 3 -->
                 <div class="menu-card fade-in" data-id="3">
                     <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200?text=File+Mignon" alt="Filé Mignon">
+                        <img src="./img/02.jpg" alt="Filé Mignon">
                     </div>
                     <div class="card-content">
                         <h3>Filé Mignon ao Molho Madeira</h3>
@@ -98,10 +76,23 @@
                         </div>
                     </div>
                 </div>
-                 <!-- Card 4 -->
+                <div class="menu-card fade-in" data-id="1">
+                    <div class="card-image">
+                        <img src="./img/04.jpg" alt="Risoto de Cogumelos">
+                    </div>
+                    <div class="card-content">
+                        <h3>Risoto de Cogumelos</h3>
+                        <p>Arroz arbóreo, mix de cogumelos frescos e parmesão.</p>
+                        <span class="price">R$ 58,00</span>
+                        <div class="card-actions">
+                            <button class="btn-details" onclick="openModal(1)">Detalhes</button>
+                            <button class="btn-add" onclick="addToCart(1)"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
                  <div class="menu-card fade-in" data-id="4">
                     <div class="card-image">
-                        <img src="https://via.placeholder.com/300x200?text=Pasta" alt="Pasta Carbonara">
+                        <img src="./img/03.webp" alt="Pasta Carbonara">
                     </div>
                     <div class="card-content">
                         <h3>Pasta Carbonara</h3>
@@ -113,11 +104,38 @@
                         </div>
                     </div>
                 </div>
+                <div class="menu-card fade-in" data-id="5">
+                    <div class="card-image">
+                        <img src="./img/08.jpg" alt="Bruschetta">
+                    </div>
+                    <div class="card-content">
+                        <h3>Bruschetta Clássica</h3>
+                        <p>Pão italiano tostado com tomate, manjericão e azeite.</p>
+                        <span class="price">R$ 32,00</span>
+                        <div class="card-actions">
+                            <button class="btn-details" onclick="openModal(5)">Detalhes</button>
+                            <button class="btn-add" onclick="addToCart(5)"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card fade-in" data-id="6">
+                    <div class="card-image">
+                        <img src="./img/07.jpg" alt="Tiramisu">
+                    </div>
+                    <div class="card-content">
+                        <h3>Tiramisù</h3>
+                        <p>A sobremesa italiana perfeita com café e mascarpone.</p>
+                        <span class="price">R$ 38,00</span>
+                        <div class="card-actions">
+                            <button class="btn-details" onclick="openModal(6)">Detalhes</button>
+                            <button class="btn-add" onclick="addToCart(6)"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section-padding bg-light">
         <div class="container about-container">
             <div class="about-text">
@@ -126,12 +144,11 @@
                 <p>Nosso ambiente é acolhedor e pensado para que você se sinta em casa, seja em um jantar romântico ou em uma celebração com amigos.</p>
             </div>
             <div class="about-image">
-                <img src="https://via.placeholder.com/500x350?text=Restaurante+Interno" alt="Interior do Restaurante">
+                <img src="/img/06.jpg" alt="Interior do Restaurante">
             </div>
         </div>
     </section>
 
-    <!-- Reservation Form -->
     <section id="reservation" class="section-padding">
         <div class="container">
             <h2 class="section-title">Faça sua Reserva</h2>
@@ -165,7 +182,6 @@
         </div>
     </section>
 
-    <!-- Contact Section & Footer -->
     <footer id="contact">
         <div class="container footer-content">
             <div class="footer-section">
@@ -193,8 +209,8 @@
         </div>
     </footer>
 
-    <!-- Modal Details -->
     <div id="dish-modal" class="modal">
+        <div class="modal-overlay-bg"></div>
         <div class="modal-content">
             <span class="close-modal">&times;</span>
             <div class="modal-body">
@@ -212,14 +228,12 @@
         </div>
     </div>
 
-    <!-- Cart Sidebar -->
     <div id="cart-sidebar" class="cart-sidebar">
         <div class="cart-header">
             <h3>Seu Pedido</h3>
             <span class="close-cart" onclick="toggleCart()">&times;</span>
         </div>
         <div class="cart-items" id="cart-items-container">
-            <!-- Items will be injected here -->
             <div class="empty-cart-msg">Seu carrinho está vazio</div>
         </div>
         <div class="cart-footer">

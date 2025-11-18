@@ -6,7 +6,7 @@ const menuItems = {
         desc: "Um clássico da culinária italiana. Arroz arbóreo cozido lentamente em caldo de legumes caseiro, finalizado com manteiga de ervas e queijo parmesão de cura 12 meses.",
         ingredients: "Arroz arbóreo, shitake, shimeji, paris, manteiga, parmesão, vinho branco.",
         price: 58.00,
-        img: "https://via.placeholder.com/500x300?text=Risoto+Detalhe"
+        img: "./img/01.jpg"
     },
     2: {
         id: 2,
@@ -14,7 +14,7 @@ const menuItems = {
         desc: "Posta de salmão fresco grelhada na perfeição, com pele crocante. Servido sobre cama de purê de batata baroa (mandioquinha) e aspargos salteados no azeite.",
         ingredients: "Salmão fresco, batata baroa, aspargos, azeite extra virgem, limão siciliano.",
         price: 72.00,
-        img: "https://via.placeholder.com/500x300?text=Salmao+Detalhe"
+        img: "./img/01.jpg"
     },
     3: {
         id: 3,
@@ -22,7 +22,7 @@ const menuItems = {
         desc: "Medalhão de filé mignon alto e suculento, grelhado ao ponto de sua preferência. Regado com nosso molho madeira artesanal reduzido por 48 horas.",
         ingredients: "Filé mignon, vinho madeira, caldo de carne, batatas, alecrim.",
         price: 85.00,
-        img: "https://via.placeholder.com/500x300?text=File+Mignon+Detalhe"
+        img: "./img/02.jpg"
     },
     4: {
         id: 4,
@@ -30,7 +30,23 @@ const menuItems = {
         desc: "A autêntica receita romana. Sem creme de leite. A cremosidade vem da emulsão perfeita entre ovos, queijo pecorino romano e a água do cozimento da massa.",
         ingredients: "Spaghetti grano duro, ovos caipiras, guanciale, pecorino romano, pimenta do reino.",
         price: 49.00,
-        img: "https://via.placeholder.com/500x300?text=Carbonara+Detalhe"
+        img: "./img/03.webp"
+    },
+    5: {
+        id: 5,
+        title: "Bruschetta Clássica",
+        desc: "Entrada leve e saborosa. Fatias de pão italiano rústico tostadas na brasa, esfregadas com alho fresco e cobertas com tomates maduros picados, manjericão e azeite de oliva extra virgem.",
+        ingredients: "Pão italiano, tomate italiano, manjericão fresco, alho, azeite extra virgem, flor de sal.",
+        price: 32.00,
+        img: "./img/05.jpg"
+    },
+    6: {
+        id: 6,
+        title: "Tiramisù",
+        desc: "A sobremesa que levanta o ânimo. Camadas alternadas de biscoitos savoiardi embebidos em café espresso forte e um creme aveludado de mascarpone e ovos, finalizado com cacau em pó.",
+        ingredients: "Queijo mascarpone, ovos, café espresso, biscoito savoiardi (champagne), açúcar, cacau em pó.",
+        price: 38.00,
+        img: "./img/06.jpg"
     }
 };
 
@@ -82,8 +98,10 @@ closeModal.onclick = function() {
     document.body.style.overflow = "auto";
 }
 
+const modalOverlayBg = document.querySelector(".modal-overlay-bg");
+
 window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target == modal || event.target == modalOverlayBg) {
         modal.style.display = "none";
         document.body.style.overflow = "auto";
     }
@@ -168,7 +186,7 @@ function updateCartUI() {
         });
     }
 
-    // Update Total Price
+
     cartTotalPrice.innerText = formatCurrency(total);
 }
 
@@ -176,7 +194,7 @@ function formatCurrency(value) {
     return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-// --- UI & ANIMATION FUNCTIONS ---
+
 
 // Mobile Menu
 const hamburger = document.querySelector(".hamburger");
