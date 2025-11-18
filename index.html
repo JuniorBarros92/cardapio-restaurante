@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor & Arte - Restaurante</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Sabor & Arte</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#menu">Cardápio</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#reservation">Reservas</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <div class="cart-icon-wrap" onclick="toggleCart()">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span id="cart-count">0</span>
+                    </div>
+                    <div class="hamburger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Gastronomia de Excelência</h2>
+            <p>Sabores que contam histórias em cada prato.</p>
+            <a href="#reservation" class="btn-primary">Reserve sua Mesa</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Nosso Cardápio</h2>
+            <div class="menu-grid">
+                <!-- Card 1 -->
+                <div class="menu-card" data-id="1">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x200?text=Risoto" alt="Risoto de Cogumelos">
+                    </div>
+                    <div class="card-content">
+                        <h3>Risoto de Cogumelos</h3>
+                        <p>Arroz arbóreo, mix de cogumelos frescos e parmesão.</p>
+                        <span class="price">R$ 58,00</span>
+                        <div class="card-actions">
+                            <button class="btn-details" onclick="openModal(1)">Detalhes</button>
+                            <button class="btn-add" onclick="addToCart(1)"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="menu-card fade-in" data-id="2">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x200?text=Salmao" alt="Salmão Grelhado">
+                    </div>
+                    <div class="card-content">
+                        <h3>Salmão Grelhado</h3>
+                        <p>Acompanha purê de batata baroa e aspargos.</p>
+                        <span class="price">R$ 72,00</span>
+                        <div class="card-actions">
+                            <button class="btn-details" onclick="openModal(2)">Detalhes</button>
+                            <button class="btn-add" onclick="addToCart(2)"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="menu-card fade-in" data-id="3">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x200?text=File+Mignon" alt="Filé Mignon">
+                    </div>
+                    <div class="card-content">
+                        <h3>Filé Mignon ao Molho Madeira</h3>
+                        <p>Com batatas rústicas e arroz branco.</p>
+                        <span class="price">R$ 85,00</span>
+                        <div class="card-actions">
+                            <button class="btn-details" onclick="openModal(3)">Detalhes</button>
+                            <button class="btn-add" onclick="addToCart(3)"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Card 4 -->
+                 <div class="menu-card fade-in" data-id="4">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/300x200?text=Pasta" alt="Pasta Carbonara">
+                    </div>
+                    <div class="card-content">
+                        <h3>Pasta Carbonara</h3>
+                        <p>Espaguete, ovos, queijo pecorino, guanciale e pimenta preta.</p>
+                        <span class="price">R$ 49,00</span>
+                        <div class="card-actions">
+                            <button class="btn-details" onclick="openModal(4)">Detalhes</button>
+                            <button class="btn-add" onclick="addToCart(4)"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-light">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2 class="section-title">Sobre Nós</h2>
+                <p>O Sabor & Arte nasceu da paixão pela culinária contemporânea. Desde 2010, nossa missão é proporcionar experiências inesquecíveis através de ingredientes selecionados e técnicas refinadas.</p>
+                <p>Nosso ambiente é acolhedor e pensado para que você se sinta em casa, seja em um jantar romântico ou em uma celebração com amigos.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://via.placeholder.com/500x350?text=Restaurante+Interno" alt="Interior do Restaurante">
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Form -->
+    <section id="reservation" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Faça sua Reserva</h2>
+            <form id="reservation-form" class="reservation-form">
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Data</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Horário</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Número de Pessoas</label>
+                    <input type="number" id="guests" name="guests" min="1" max="20" required>
+                </div>
+                <button type="submit" class="btn-primary full-width">Confirmar Reserva</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section & Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Rua das Flores, 123 - Centro</p>
+                <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                <p><i class="fas fa-envelope"></i> contato@saborarte.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horários</h3>
+                <p>Segunda a Sexta: 11h30 - 15h00 | 18h30 - 23h00</p>
+                <p>Sábado e Domingo: 12h00 - 23h30</p>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sabor & Arte. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Details -->
+    <div id="dish-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img id="modal-img" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h3 id="modal-title"></h3>
+                    <p id="modal-desc"></p>
+                    <p class="modal-ingredients"><strong>Ingredientes:</strong> <span id="modal-ingredients-text"></span></p>
+                    <span id="modal-price" class="price"></span>
+                    <button class="btn-primary full-width" id="modal-add-btn">Adicionar ao Pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Pedido</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Items will be injected here -->
+            <div class="empty-cart-msg">Seu carrinho está vazio</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">R$ 0,00</span>
+            </div>
+            <button class="btn-primary full-width">Finalizar Pedido</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
