@@ -6,7 +6,7 @@ const menuItems = {
         desc: "Um clássico da culinária italiana. Arroz arbóreo cozido lentamente em caldo de legumes caseiro, finalizado com manteiga de ervas e queijo parmesão de cura 12 meses.",
         ingredients: "Arroz arbóreo, shitake, shimeji, paris, manteiga, parmesão, vinho branco.",
         price: 58.00,
-        img: "./img/01.jpg"
+        img: "./img/04.jpg"
     },
     2: {
         id: 2,
@@ -38,7 +38,7 @@ const menuItems = {
         desc: "Entrada leve e saborosa. Fatias de pão italiano rústico tostadas na brasa, esfregadas com alho fresco e cobertas com tomates maduros picados, manjericão e azeite de oliva extra virgem.",
         ingredients: "Pão italiano, tomate italiano, manjericão fresco, alho, azeite extra virgem, flor de sal.",
         price: 32.00,
-        img: "./img/05.jpg"
+        img: "./img/08.jpg"
     },
     6: {
         id: 6,
@@ -46,7 +46,7 @@ const menuItems = {
         desc: "A sobremesa que levanta o ânimo. Camadas alternadas de biscoitos savoiardi embebidos em café espresso forte e um creme aveludado de mascarpone e ovos, finalizado com cacau em pó.",
         ingredients: "Queijo mascarpone, ovos, café espresso, biscoito savoiardi (champagne), açúcar, cacau em pó.",
         price: 38.00,
-        img: "./img/06.jpg"
+        img: "./img/07.jpg"
     }
 };
 
@@ -69,8 +69,6 @@ const cartItemsContainer = document.getElementById("cart-items-container");
 const cartTotalPrice = document.getElementById("cart-total-price");
 const cartCountBubble = document.getElementById("cart-count");
 
-// --- MODAL FUNCTIONS ---
-
 function openModal(id) {
     const item = menuItems[id];
     if (item) {
@@ -80,12 +78,11 @@ function openModal(id) {
         modalIngredients.innerText = item.ingredients;
         modalPrice.innerText = formatCurrency(item.price);
         
-        // Setup Add Button inside Modal
         modalAddBtn.onclick = () => {
             addToCart(id);
             modal.style.display = "none";
             document.body.style.overflow = "auto";
-            toggleCart(); // Open cart to show item added
+            toggleCart();
         };
 
         modal.style.display = "flex";
@@ -106,8 +103,6 @@ window.onclick = function(event) {
         document.body.style.overflow = "auto";
     }
 }
-
-// --- CART FUNCTIONS ---
 
 function toggleCart() {
     cartSidebar.classList.toggle("open");
@@ -178,7 +173,7 @@ function updateCartUI() {
                         <button class="qty-btn" onclick="changeQty(${item.id}, -1)">-</button>
                         <span>${item.qty}</span>
                         <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
-                        <i class="fas fa-trash-alt remove-item" onclick="removeFromCart(${item.id})" style="margin-left: auto;"></i>
+                        <i class="fas fa-trash-alt remove-item" onclick="removeFromCart(${item.id})"></i>
                     </div>
                 </div>
             `;
