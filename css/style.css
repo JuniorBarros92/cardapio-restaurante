@@ -793,6 +793,14 @@ footer {
         display: none;
     }
     
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+        order: -1;
+    }
+
     .hero-content h2 {
         font-size: 3rem;
     }
